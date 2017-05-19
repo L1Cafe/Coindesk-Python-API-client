@@ -24,5 +24,6 @@ def get_historical_price(
         ):
     start_string = "%02d" % start.year + "-" + "%02d" % start.month + "-" + "%02d" % start.day
     end_string = "%02d" % end.year + "-" + "%02d" % end.month + "-" + "%02d" % end.day
-    return requests.get(coindeskApi + "historical/close.json?currency="
-                        + currency + "&start=" + start_string + "&end=" + end_string).json()["bpi"]
+    return requests.get(f"{coindeskApi}historical/close.json?"
+                        f"currency={currency}&start={start_string}&end={end_string}") \
+                        .json()["bpi"]
