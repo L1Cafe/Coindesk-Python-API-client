@@ -22,8 +22,8 @@ def get_historical_price(
         start=date.today()-timedelta(days=31),
         end=date.today()
         ):
-    start_string = "%02d" % start.year + "-" + "%02d" % start.month + "-" + "%02d" % start.day
-    end_string = "%02d" % end.year + "-" + "%02d" % end.month + "-" + "%02d" % end.day
+    start_string = f"{start.year:#02d}-{start.month:#02d}-{start.day:#02d}"
+    end_string = f"{end.year:#02d}-{end.month:#02d}-{end.day:#02d}"
     return requests.get(f"{coindeskApi}historical/close.json?"
                         f"currency={currency}&start={start_string}&end={end_string}") \
                         .json()["bpi"]
