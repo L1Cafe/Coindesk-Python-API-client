@@ -9,7 +9,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='Coindesk Python API client',
+    name='coindesk',
     version='0.0.1a1',
     description='This library fetches Coindesk\'s Bitcoin Price Index from their API.',
     long_description=long_description,
